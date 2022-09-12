@@ -1,5 +1,6 @@
 package com.example.applicationwithsettings;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
-                    Toast.makeText(getApplicationContext(), "settings clicked", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
+                    startActivity(intent);
                     return true;
                 }
                 return false;
