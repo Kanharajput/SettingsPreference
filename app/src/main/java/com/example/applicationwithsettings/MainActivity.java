@@ -1,9 +1,11 @@
 package com.example.applicationwithsettings;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,5 +34,15 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        // initialise the Shared Preference by getting the Shared Preference for this activity
+        SharedPreferences sharedPreferences = PreferenceManager
+                                                    .getDefaultSharedPreferences(this);
+
+        // get the switch value from the SharedPreference with it's key
+        Boolean setting_switch = sharedPreferences
+                                        .getBoolean(SettingsActivity.PREF_SETTING_KEY,false);  // second argument is default
+        // show the current setting
+        Toast.makeText(this,setting_switch.toString(),Toast.LENGTH_SHORT).show();
     }
 }

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class SettingsActivity extends AppCompatActivity {
+    // it holds the key of the SwitchPreferenceCompat
+    public static final String PREF_SETTING_KEY = "example_switch";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
